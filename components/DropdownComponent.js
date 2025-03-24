@@ -4,16 +4,16 @@ import { Dropdown } from "react-native-element-dropdown";
 import { Ionicons } from "@expo/vector-icons";
 
 const data = [
-  { label: "Addis Ketema", value: "Addis Ketema" },
-  { label: "Akaky Kaliti", value: "Akaky Kaliti" },
-  { label: "Arada", value: "Arada" },
-  { label: "Bole", value: "Bole" },
-  { label: "Gullele", value: "Gullele" },
-  { label: "Kirkos", value: "Kirkos" },
-  { label: "Kolfe Keranio", value: "Kolfe Keranio" },
-  { label: "Lideta", value: "Lideta" },
-  { label: "Nifas Silk-Lafto", value: "Nifas Silk-Lafto" },
-  { label: "Yeka", value: "Yeka" },
+  { label: "Dakar", value: "Dakar" },
+  { label: "Thies", value: "Thies" },
+  { label: "St-Louis", value: "St-Louis" },
+  { label: "Louga", value: "Louga" },
+  { label: "Kaolack", value: "Kaolack" },
+  { label: "Tambacounda", value: "Tambacounda" },
+  { label: "Ziguinchor", value: "Ziguinchor" },
+  { label: "Banjul", value: "Banjul" },
+  { label: "Bamako", value: "Bamako" },
+  { label: "Abidjan", value: "Abidjan" },
 ];
 
 const DropdownComponent = ({ onSelect }) => {

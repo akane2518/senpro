@@ -18,6 +18,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import IconButton from "./components/ui/IconButton";
 
+
 const Stack = createNativeStackNavigator();
 
 const Drawer = createDrawerNavigator();
@@ -71,6 +72,7 @@ function AuthStack() {
         contentStyle: { backgroundColor: " #FAFAFA" },
       }}
     >
+  
       <Stack.Screen name="Welcome" component={LandingScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Signup" component={SignupScreen} />
@@ -119,6 +121,7 @@ function Navigation() {
 export default function App() {
   return (
     <>
+
       <StatusBar style="dark" />
 
       <AuthContextProvider>
@@ -127,3 +130,4 @@ export default function App() {
     </>
   );
 }
+
