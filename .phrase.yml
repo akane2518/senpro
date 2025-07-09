@@ -1,0 +1,12 @@
+phrase:
+  access_token: OVFlQjE1eFpEbmpHMnJnd3l5czJwT1ZKSDMzUC9Zempkc29tVko2WkVIQT06M290aU1UTHRNRE1JWldXV1k0NDI4NDpJcUR4VFhuUzJMNWJ2UVNxOHNMNUNo
+  project_id: b3b2921000f78536135aa032baf4321c
+  file_format: "xml"
+
+  push:
+    sources:
+    - file: "./res/values-<locale_code>/strings.xml"
+
+  pull:
+    targets:
+    - file: "./res/values-<locale_code>/strings.xml"

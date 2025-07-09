@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Button from "../components/ui/Button";
+import { StatusBar } from "expo-status-bar";
 import { AuthContext } from "../store/auth-context";
 
 const LandingScreen = ({ navigation }) => {
@@ -20,6 +21,7 @@ const LandingScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+       
       <View style={styles.item}>
         <Text style={styles.text}>Which one are you?</Text>
       </View>
@@ -29,6 +31,7 @@ const LandingScreen = ({ navigation }) => {
       <View style={styles.item}>
         <Button onPress={navigateSPToLoginScreen}>Service Provider</Button>
       </View>
+
     </View>
   );
 };

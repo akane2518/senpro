@@ -1,38 +1,40 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Text, View} from 'react-native';
 import { StatusBar } from "expo-status-bar";
 
-import LoginScreen from "./screens/LoginScreen";
-import SignupScreen from "./screens/SignupScreen";
+import LoginScreen from "./src/screens/LoginScreen";
+import SignupScreen from "./src/screens/SignupScreen";
 
-import ServiceCategoriesScreen from "./screens/ServiceCategoriesScreen";
-import ServiceProvidersScreen from "./screens/ServiceProvidersScreen";
-import ServiceProviderDetailsScreen from "./screens/ServiceProviderDetailsScreen";
-import LandingScreen from "./screens/LandingScreen";
-import AuthContextProvider, { AuthContext } from "./store/auth-context";
+import ServiceCategoriesScreen from "./src/screens/ServiceCategoriesScreen";
+import ServiceProvidersScreen from "./src/screens/ServiceProvidersScreen";
+import ServiceProviderDetailsScreen from "./src/screens/ServiceProviderDetailsScreen";
+import LandingScreen from "./src/screens/LandingScreen";
+import HomeScreen from "./src/screens/HomeScreen";
+import AuthContextProvider, { AuthContext } from "./src/store/auth-context";
 import { useContext } from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import YourAccount from "./screens/YourAccount";
+import YourAccount from "./src/screens/YourAccount";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-import IconButton from "./components/ui/IconButton";
-
+import IconButton from "./src/components/ui/IconButton";
 
 const Stack = createNativeStackNavigator();
 
 const Drawer = createDrawerNavigator();
 
-const DrawerNavigator = () => {
+const DrawerNavigator = (props) => {
   const authCtx = useContext(AuthContext);
   return (
     <Drawer.Navigator
       screenOptions={{
         headerStyle: { backgroundColor: "#FAFAFA" },
-        headerTintColor: "black",
+        headerTintColor: "blue",
         sceneContainerStyle: { backgroundColor: "#FAFAFA" },
       }}
     >
+      
       <Drawer.Screen
         name="Service Categories"
         component={ServiceCategoriesScreen}
@@ -40,6 +42,7 @@ const DrawerNavigator = () => {
           drawerIcon: ({ color, size }) => (
             <MaterialIcons name="category" color={color} size={size} />
           ),
+          
         }}
       />
       <Drawer.Screen
@@ -57,26 +60,31 @@ const DrawerNavigator = () => {
               onPress={authCtx.logout}
             />
           ),
+          
         }}
       />
+     
     </Drawer.Navigator>
   );
 };
 
 function AuthStack() {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: { backgroundColor: "#FAFAFA" },
-        headerTintColor: "black",
-        contentStyle: { backgroundColor: " #FAFAFA" },
-      }}
-    >
+
+     <Stack.Navigator
+        screenOptions={{
+         headerStyle: { backgroundColor: "#FAFAFA" },
+         headerTintColor: "black",
+         contentStyle: { backgroundColor: " #FAFAFA" },
+        }}
+      >
   
-      <Stack.Screen name="Welcome" component={LandingScreen} />
+      <Stack.Screen name="Senpro" component={LandingScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Signup" component={SignupScreen} />
-    </Stack.Navigator>
+      
+      </Stack.Navigator>
+
   );
 }
 
@@ -102,6 +110,7 @@ function AuthenticatedStack() {
         name="Service Provider Details"
         component={ServiceProviderDetailsScreen}
       />
+
     </Stack.Navigator>
   );
 }
